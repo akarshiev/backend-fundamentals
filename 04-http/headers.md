@@ -1,6 +1,6 @@
 # HTTP Headers
 
-HTTP request/response qo'shimcha ma'lumot beradi.
+HTTP request/response uchun qo'shimcha ma'lumot beradi.
 
 ---
 

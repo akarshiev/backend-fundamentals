@@ -6,7 +6,7 @@ Browser qanday ishlashini tushunish.
 
 ## Nazariya
 
-Browser quyidagi qadamlarni bajardi:
+Browser quyidagi qadamlarni bajaradi:
 
 ```text
 1. URL parse

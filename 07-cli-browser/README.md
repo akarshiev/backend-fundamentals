@@ -80,6 +80,6 @@ go run http-client.go example.com
 
 ## Xulosa
 
-- CLI browser TCP va HTTP ni tushunishga yordamadi
+- CLI browser TCP va HTTP ni tushunishga yordam beradi
 - Har bir qadamni amalda ko'rish mumkin
 - Spring Boot'dagi RestTemplate ortida shu jarayonlar ishlaydi

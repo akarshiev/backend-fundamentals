@@ -11,7 +11,7 @@ TCP ikki qurilma o'rtasida ishonchli aloqa o'rnatadi.
 Asosiy xususiyatlar:
 
 ```text
-- Ismonchli: paketlar yetib kelishini ta'minlaydi
+- Ishonchli: paketlar yetib kelishini ta'minlaydi
 - Tartibli: paketlar to'g'ri tartibda keladi
 - Xatolarni tuzatadi: yo'qolgan paketlarni qayta yuboradi
 ```

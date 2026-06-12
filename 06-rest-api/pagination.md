@@ -75,7 +75,7 @@ Juda tez
 Kamchiligi:
 
 ```text
-Page 57 ga sakrash qiyin
+Page 57 ga o'tish qiyin
 ```
 
 ---
