@@ -82,6 +82,7 @@ import (
 	"fmt"
 	"io"
 	"net"
+	"time"
 )
 
 func main() {
@@ -92,7 +93,7 @@ func main() {
 
 	// TLS dial
 	conn, err := tls.DialWithDialer(
-		&net.Dialer{Timeout: 5 * 1e9},
+		&net.Dialer{Timeout: 5 * time.Second},
 		"tcp",
 		"google.com:443",
 		config,

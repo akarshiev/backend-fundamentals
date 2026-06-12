@@ -50,8 +50,10 @@ func main() {
     fmt.Println("File FD:", file.Fd())
 
     conn, _ := net.Dial("tcp", "google.com:80")
-    fmt.Println("Socket FD:", conn.(*net.TCPConn).File())
     defer conn.Close()
+    tcpConn := conn.(*net.TCPConn)
+    f, _ := tcpConn.File()
+    fmt.Println("Socket FD:", f.Fd())
 }
 ```
 

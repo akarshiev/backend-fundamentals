@@ -88,17 +88,17 @@ package main
 import (
 	"compress/gzip"
 	"fmt"
-	"io"
 	"net/http"
 	"strings"
-	"sync"
 )
 
-var gzipPool = sync.Pool{
-	New: func() interface{} {
-		w, _ := gzip.NewWriterLevel(nil, gzip.BestSpeed)
-		return w
-	},
+type gzipResponseWriter struct {
+	http.ResponseWriter
+	Writer *gzip.Writer
+}
+
+func (g gzipResponseWriter) Write(b []byte) (int, error) {
+	return g.Writer.Write(b)
 }
 
 func gzipMiddleware(next http.Handler) http.Handler {
@@ -110,13 +110,10 @@ func gzipMiddleware(next http.Handler) http.Handler {
 
 		w.Header().Set("Content-Encoding", "gzip")
 
-		gz := gzipPool.Get().(*gzip.Writer)
-		defer gzipPool.Put(gz)
-
-		gz.Reset(w)
+		gz, _ := gzip.NewWriterLevel(w, gzip.BestSpeed)
 		defer gz.Close()
 
-		next.ServeHTTP(gz, r)
+		next.ServeHTTP(gzipResponseWriter{w, gz}, r)
 	})
 }
 
