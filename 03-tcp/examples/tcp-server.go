@@ -5,46 +5,139 @@ import (
 	"fmt"
 	"net"
 	"os"
+	"os/signal"
 	"strings"
+	"sync"
+	"syscall"
+	"time"
 )
 
+// TCP Server -- Echo server with goroutine, scanner, graceful shutdown
+//
+// Xususiyatlari:
+// - Har bir client uchun alohida goroutine
+// - Echo: client nima yuborsa, server qaytaradi
+// - Graceful shutdown: Ctrl+C bilan tozalash
+// - Client ulanish/uzilish loglari
+// - Timestamp har xabarda
+
 func main() {
+	// Server yaratish
 	listener, err := net.Listen("tcp", ":8080")
 	if err != nil {
-		panic(err)
+		fmt.Println("Listen error:", err)
+		os.Exit(1)
 	}
 	defer listener.Close()
 
 	fmt.Println("TCP Server listening on :8080")
+	fmt.Println("Press Ctrl+C to stop")
 
+	// Graceful shutdown uchun signal handler
+	sigChan := make(chan os.Signal, 1)
+	signal.Notify(sigChan, syscall.SIGINT, syscall.SIGTERM)
+
+	// Clientlarni track qilish uchun WaitGroup
+	var wg sync.WaitGroup
+
+	// Shutdown flag
+	done := make(chan bool)
+
+	// Signal handler goroutine
+	go func() {
+		<-sigChan
+		fmt.Println("\nShutting down server...")
+		close(done)
+		listener.Close()
+	}()
+
+	// Asosiy loop -- clientlarni qabul qilish
 	for {
 		conn, err := listener.Accept()
 		if err != nil {
-			fmt.Println("Accept error:", err)
-			continue
+			select {
+			case <-done:
+				fmt.Println("Waiting for active connections to close...")
+				wg.Wait()
+				fmt.Println("Server stopped.")
+				return
+			default:
+				fmt.Println("Accept error:", err)
+				continue
+			}
 		}
 
-		go handleConnection(conn)
+		wg.Add(1)
+		go handleConnection(conn, &wg, done)
 	}
 }
 
-func handleConnection(conn net.Conn) {
+// handleConnection -- har bir client uchun alohida goroutine
+func handleConnection(conn net.Conn, wg *sync.WaitGroup, done <-chan bool) {
+	defer wg.Done()
 	defer conn.Close()
 
-	fmt.Printf("Client connected: %s\n", conn.RemoteAddr())
+	clientAddr := conn.RemoteAddr().String()
+	timestamp := time.Now().Format("15:04:05")
 
-	reader := bufio.NewReader(conn)
+	fmt.Printf("[%s] Client connected: %s\n", timestamp, clientAddr)
+
+	// Client uzilishini tekshirish uchun goroutine
+	disconnected := make(chan bool, 1)
+	go func() {
+		<-done
+		disconnected <- true
+	}()
+
+	// Scanner -- satr-satr o'qish
+	scanner := bufio.NewScanner(conn)
+	scanner.Buffer(make([]byte, 1024*1024), 1024*1024) // 1MB buffer
+
 	for {
-		message, err := reader.ReadString('\n')
-		if err != nil {
-			fmt.Printf("Client disconnected: %s\n", conn.RemoteAddr())
+		// Shutdown tekshirish
+		select {
+		case <-disconnected:
+			fmt.Printf("[%s] Client %s: server shutting down\n",
+				time.Now().Format("15:04:05"), clientAddr)
 			return
+		default:
 		}
 
-		message = strings.TrimSpace(message)
-		fmt.Printf("Received: %s\n", message)
+		// Scanner timeout
+		conn.SetReadDeadline(time.Now().Add(5 * time.Second))
 
-		response := fmt.Sprintf("Server received: %s\n", message)
-		conn.Write([]byte(response))
+		if scanner.Scan() {
+			message := strings.TrimSpace(scanner.Text())
+			if message == "" {
+				continue
+			}
+
+			timestamp = time.Now().Format("15:04:05")
+			fmt.Printf("[%s] %s: %s\n", timestamp, clientAddr, message)
+
+			// Echo -- xabarni qaytarish
+			response := fmt.Sprintf("[%s] Echo: %s\n",
+				time.Now().Format("15:04:05"), message)
+			_, err := conn.Write([]byte(response))
+			if err != nil {
+				fmt.Printf("[%s] Write error to %s: %v\n",
+					time.Now().Format("15:04:05"), clientAddr, err)
+				return
+			}
+
+			// "quit" yoki "exit" -- client uziladi
+			if message == "quit" || message == "exit" {
+				fmt.Printf("[%s] Client %s disconnected (quit)\n",
+					time.Now().Format("15:04:05"), clientAddr)
+				conn.Write([]byte("Goodbye!\n"))
+				return
+			}
+		} else {
+			if err := scanner.Err(); err != nil {
+				fmt.Printf("[%s] Client %s: read error: %v\n",
+					time.Now().Format("15:04:05"), clientAddr, err)
+			}
+			return
+		}
 	}
 }
