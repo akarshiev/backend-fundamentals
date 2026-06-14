@@ -77,6 +77,13 @@ A structured learning path for backend development fundamentals -- from Linux in
 - Dynamic vs Static IP
 - OSI Model
 
+### 10 QUIC & HTTP/3
+- TCP Head Of Line Blocking
+- HTTP Version Evolution (1.1 → 2 → 3)
+- QUIC Protocol
+- HTTP/3
+- Connection Migration
+
 ---
 
 ## Learning Path
@@ -99,6 +106,8 @@ Linux
 -> Connection Pooling
 -> IP Address, NAT, Ports
 -> OSI Model
+-> TCP HOL Blocking
+-> QUIC & HTTP/3
 ```
 
 Each topic builds on the previous one.
