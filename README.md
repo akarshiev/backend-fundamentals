@@ -28,7 +28,16 @@ A structured learning path for backend development fundamentals -- from Linux in
 - TCP Basics
 - Client/Server Sockets
 - 3-Way Handshake
-- MTU, Packet Loss, RTT
+- TCP Flags (SYN, ACK, FIN, RST, PSH, URG)
+- Sequence & ACK Numbers
+- TCP Checksum
+- RTT, MTU, MSS, PMTUD
+- Flow Control & Congestion Control
+- TCP Slow Start
+- Head Of Line Blocking
+- TCP Fast Open (TFO)
+- Buffer
+- TCP Packet Structure
 
 ### 04 HTTP
 - HTTP Request/Response
@@ -54,6 +63,12 @@ A structured learning path for backend development fundamentals -- from Linux in
 - Header/Body Parsing
 - Minimal Browser
 
+### 08 UDP
+- UDP Basics
+- TCP vs UDP
+- DNS Client (Go)
+- UDP Server/Client (Go)
+
 ---
 
 ## Learning Path
@@ -64,8 +79,11 @@ Linux
 -> Socket
 -> TCP
 -> Handshake
--> MTU
--> Packet
+-> Flags, Sequence, ACK
+-> MTU, MSS, PMTUD
+-> Flow Control, Congestion Control
+-> UDP
+-> DNS Client
 -> HTTP
 -> HTTPS
 -> REST
