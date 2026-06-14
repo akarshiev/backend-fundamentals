@@ -84,6 +84,24 @@ A structured learning path for backend development fundamentals -- from Linux in
 - HTTP/3
 - Connection Migration
 
+### 11 Security
+- Cryptography (Symmetric/Asymmetric)
+- Digital Signatures
+- Certificate Authority (CA)
+- OpenSSL
+- ARP & MAC Address
+- ARP Spoofing, MITM, DNS Spoofing, SSL Stripping
+- DoS / DDoS, SYN Flood, UDP Flood, Slowloris
+- Botnet
+- Reverse Proxy, Cloudflare
+- [Firewall (L3/L4)](11-security/firewall.md) — UFW, iptables, port control
+- [WAF (L7)](11-security/waf.md) — SQL Injection, XSS, CSRF
+- [NAC & VPC](11-security/nac-vpc.md) — Private/Public zones, DB hiding
+- [SSH Tunneling](11-security/ssh-tunneling.md) — Port forwarding, ssh -L/-R/-D
+- [OWASP Top 10](11-security/owasp-top10.md) — Common vulnerabilities
+- [Security Layers](11-security/security-layers.md) — Defense in depth
+- Practical Attack Lab (educational code)
+
 ---
 
 ## Learning Path
@@ -108,6 +126,16 @@ Linux
 -> OSI Model
 -> TCP HOL Blocking
 -> QUIC & HTTP/3
+-> Security Fundamentals
+-> Cryptography, Digital Signatures, CA
+-> ARP Spoofing, MITM
+-> DDoS, SYN Flood, Slowloris
+-> Reverse Proxy, Defense
+-> Firewall (L3/L4)
+-> WAF (L7), SQL Injection
+-> NAC, VPC, Private Networks
+-> OWASP Top 10
+-> Security Layers (Defense in Depth)
 ```
 
 Each topic builds on the previous one.
