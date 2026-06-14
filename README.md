@@ -69,6 +69,14 @@ A structured learning path for backend development fundamentals -- from Linux in
 - DNS Client (Go)
 - UDP Server/Client (Go)
 
+### 09 Networking
+- IP Address (Public/Private)
+- NAT (Network Address Translation)
+- Ports
+- Port Forwarding
+- Dynamic vs Static IP
+- OSI Model
+
 ---
 
 ## Learning Path
@@ -89,6 +97,8 @@ Linux
 -> REST
 -> Compression
 -> Connection Pooling
+-> IP Address, NAT, Ports
+-> OSI Model
 ```
 
 Each topic builds on the previous one.
