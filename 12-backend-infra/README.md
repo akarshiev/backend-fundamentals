@@ -25,6 +25,9 @@ Proxy, Redis, Load Balancing va zamonaviy backend arxitekturasi.
 ### Resilience
 - [Circuit Breaker](circuit-breaker.md) -- Cascading Failure, CLOSED/OPEN/HALF-OPEN, Fallback, Node.js amaliyot
 
+### Amaliyot
+- [Go Reverse Proxy](examples/go-proxy/) -- Go tilida Reverse Proxy, Middleware, Rate Limiting amaliyot
+
 ---
 
 ## Qisqacha
