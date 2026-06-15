@@ -97,7 +97,7 @@ On-premise:
 - Firewall
 ```
 
-### VPC拓撲
+### VPC Topologiyasi
 
 ```text
 Internet Gateway

@@ -43,8 +43,8 @@ SELECT * FROM users WHERE username = '' OR '1'='1';
 
 ```sql
 -- User input: '; DROP TABLE users; --
-DELETE * FROM users;
--- Jadvalni butunlay o'chiradi!
+DELETE FROM users;
+-- Barcha qatorlarni o'chiradi!
 ```
 
 ### SQL Injection turlari

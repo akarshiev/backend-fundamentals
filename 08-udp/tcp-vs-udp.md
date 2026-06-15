@@ -6,19 +6,16 @@ Ikki asosiy transport protokolini taqqoslash.
 
 ## Umumiy taqqoslash
 
-```text
-                    TCP                     UDP
-Connection:         ✓ Bor                   ✓ Yo'q
-Reliable:           ✓ Ishonchli             ✗ Ishonchsiz
-Ordered:            ✓ Tartibli              ✗ Tartibsiz
-Retransmission:     ✓ Bor                   ✗ Yo'q
-Flow Control:       ✓ Bor                   ✗ Yo'q
-Congestion Control: ✓ Bor                   ✗ Yo'q
-Speed:              ✗ Sekinroq              ✓ Tez
-Overhead:           ✓ Katta                 ✓ Kichik
-Latency:            ✓ Yuqori                ✓ Past
-Header Size:        20 bytes                8 bytes
-```
+| Xususiyat | TCP | UDP |
+|-----------|-----|-----|
+| Connection | ✅ Bor | ❌ Yo'q |
+| Reliable | ✅ Ishonchli | ❌ Ishonchsiz |
+| Ordered | ✅ Tartibli | ❌ Tartibsiz |
+| Retransmission | ✅ Bor | ❌ Yo'q |
+| Flow Control | ✅ Bor | ❌ Yo'q |
+| Congestion Control | ✅ Bor | ❌ Yo'q |
+| Tezlik | ❌ Sekinroq | ✅ Tez |
+| Header Size | 20 bytes | 8 bytes |
 
 ---
 

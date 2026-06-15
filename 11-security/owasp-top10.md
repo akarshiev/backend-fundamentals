@@ -94,8 +94,8 @@ SELECT * FROM users WHERE username = '' OR '1'='1';
 -- Barcha foydalanuvchilarni qaytaradi!
 
 -- Juda xavfli kod
-DELETE * FROM users;
--- Jadvalni butunlay o'chiradi!
+DELETE FROM users;
+-- Barcha qatorlarni o'chiradi!
 ```
 
 ### Himoya

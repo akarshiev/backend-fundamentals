@@ -38,7 +38,7 @@ Hujumchi → https://bank.com (HTTPS) ← Asl server
 
 ## Amaliy hujum (o'rganish uchun)
 
-###sslstrip (Python)
+### sslstrip (Python)
 
 ```python
 # sslstrip - HTTPS ni HTTP ga tushirish

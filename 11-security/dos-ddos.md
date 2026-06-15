@@ -36,7 +36,7 @@ Bot 5  ─┘
 |-----------|-----|------|
 | Manba soni | 1 | Ko'p (minglab) |
 | Kuchi | Kam | Juda katta |
-| aniqlash | Oson | Qiyin |
+| Aniqlash | Oson | Qiyin |
 | Himoya | Oson | CDN, Rate Limiting kerak |
 
 ---

