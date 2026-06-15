@@ -8,6 +8,11 @@ Tarmoqni qatlamlarga bo'lish modeli.
 
 ---
 
+
+![OSI Model](https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/OSI_Model_v1.svg/400px-OSI_Model_v1.svg.png)
+
+*OSI 7 qatlam modeli*
+
 ## Nima muammoni hal qiladi?
 
 Agar qatlamlar bo'lmasa:

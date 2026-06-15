@@ -16,6 +16,11 @@ Lokal tarmoqda IP manzilni MAC manzilga aniqlash uchun ishlatiladi.
 
 ---
 
+
+![ARP](https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/ARP_Animated_v3.gif/400px-ARP_Animated_v3.gif)
+
+*ARP so'rov va javob jarayoni*
+
 ## Ishlash prinsipi
 
 ```text

@@ -8,6 +8,12 @@ TLS ulanish o'rnatish jarayoni.
 
 TLS handshake TCP dan keyin sodir bo'ladi.
 
+![TLS Handshake](https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/SSL_handshake_with_two_way_authentication_with_certificates.svg/500px-SSL_handshake_with_two_way_authentication_with_certificates.svg.png)
+
+*TLS Handshake jarayoni*
+
+
+
 ```text
 1. Client Hello
 2. Server Hello

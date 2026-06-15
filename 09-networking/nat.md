@@ -8,6 +8,11 @@ Router ichki private IP'larni bitta public IP ortiga yashiradi.
 
 ---
 
+
+![NAT](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/NAT_Concept-en.svg/500px-NAT_Concept-en.svg.png)
+
+*NAT ishlash prinsipi: Private IP → Public IP*
+
 ## NAT ishlash jarayoni
 
 ### Uy tarmog'i

@@ -140,6 +140,11 @@ Success?
 
 ---
 
+
+![Circuit Breaker States](https://martinfowler.com/bliki/images/circuitBreaker/state.png)
+
+*Circuit Breaker holatlari: CLOSED → OPEN → HALF-OPEN*
+
 ## Circuit Breaker Lifecycle
 
 ```text
@@ -269,7 +274,7 @@ breaker.on("reject", () => {
   console.log("⛔ FAIL FAST — So'rov rad etildi!");
 });
 
-// 🚀 Test: Har soniyada 1 ta request
+// Test: Har soniyada 1 ta request
 let counter = 1;
 
 setInterval(async () => {

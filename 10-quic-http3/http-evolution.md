@@ -6,6 +6,12 @@
 HTTP/1.1 → HTTP/2 → HTTP/3
 ```
 
+![HTTP Evolution](https://http3-explained.haxx.se/images/h2-streams.png)
+
+*HTTP versiyalar taqqoslovi*
+
+
+
 ---
 
 ## HTTP/1.1

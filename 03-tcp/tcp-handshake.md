@@ -8,6 +8,12 @@ TCP ulanish o'rnatish jarayoni.
 
 TCP ulanish o'rnatish uchun 3 ta qadam kerak:
 
+![TCP 3-Way Handshake](https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Tcp-handshake.svg/500px-Tcp-handshake.svg.png)
+
+*TCP 3-Way Handshake jarayoni*
+
+
+
 ```text
 1. SYN
 2. SYN-ACK
