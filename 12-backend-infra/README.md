@@ -22,6 +22,9 @@ Proxy, Redis, Load Balancing va zamonaviy backend arxitekturasi.
 ### Arxitektura
 - [Zamonaviy Backend Arxitekturasi](modern-architecture.md) -- DNS, TCP, TLS, HTTP, Reverse Proxy, Load Balancer, Application, Redis, Database
 
+### Resilience
+- [Circuit Breaker](circuit-breaker.md) -- Cascading Failure, CLOSED/OPEN/HALF-OPEN, Fallback, Node.js amaliyot
+
 ---
 
 ## Qisqacha
@@ -41,6 +44,9 @@ Proxy, Redis, Load Balancing va zamonaviy backend arxitekturasi.
 | L4 Load Balancing | TCP/UDP (tez) |
 | L7 Load Balancing | HTTP (aqlli) |
 | Mirroring | Traffic ni nusxalash |
+| Circuit Breaker | Servis yiqilishini to'xtatish |
+| Fallback | Zaxira servis ishlatish |
+| Fail Fast | Kutmasdan darhol javob |
 
 ---
 
@@ -65,6 +71,10 @@ Proxy
 -> Fixed Window, Token Bucket, Leaky Bucket
 -> Distributed Rate Limiting (Redis + Lua)
 -> Zamonaviy Backend Arxitekturasi
+-> Circuit Breaker
+-> Cascading Failure
+-> CLOSED / OPEN / HALF-OPEN
+-> Fallback, Fail Fast
 ```
 
 ---
@@ -76,4 +86,5 @@ Proxy
 3. Load Balancing algoritmlarini tushuning
 4. Redis ni o'rganing
 5. Rate Limiting va Throttling ni tushuning
-6. Zamonaviy arxitekturani tahlil qiling
+6. Circuit Breaker ni o'rganing
+7. Zamonaviy arxitekturani tahlil qiling

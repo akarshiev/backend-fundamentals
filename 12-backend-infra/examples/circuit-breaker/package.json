@@ -1,0 +1,12 @@
+{
+  "name": "circuit-breaker-example",
+  "version": "1.0.0",
+  "description": "Circuit Breaker pattern amaliyot namunasi",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "opossum": "^8.1.4"
+  }
+}
