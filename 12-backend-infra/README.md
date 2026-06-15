@@ -1,0 +1,69 @@
+# 12 - Backend Infratuzilmasi (Backend Infrastructure)
+
+Proxy, Redis, Load Balancing va zamonaviy backend arxitekturasi.
+
+---
+
+## Mavzular
+
+### Proxy
+- [Proxy asoslari](proxy.md) -- Forward va Reverse Proxy
+- [Reverse Proxy Vazifalari](reverse-proxy-features.md) -- Load Balancing, Caching, Compression, Rate Limiting, SSL Termination
+
+### Redis
+- [Redis](redis.md) -- In-Memory Key-Value Database, Cache, Session, Rate Limiting, Queue, Pub/Sub
+
+### Load Balancing
+- [Load Balancing](load-balancing.md) -- Round Robin, Least Connections, IP Hashing, Weighted, L4/L7, Mirroring
+
+### Arxitektura
+- [Zamonaviy Backend Arxitekturasi](modern-architecture.md) -- DNS, TCP, TLS, HTTP, Reverse Proxy, Load Balancer, Application, Redis, Database
+
+---
+
+## Qisqacha
+
+| Mavzu | Tushuntirish |
+|-------|-------------|
+| Forward Proxy | Clientni yashiradi (VPN) |
+| Reverse Proxy | Serverni yashiradi (Nginx) |
+| SSL Termination | TLS faqat proxy'da |
+| Redis | RAM da tez database (~100 ns) |
+| Round Robin | Ketma-ket taqsimlash |
+| Least Connections | Eng kam connection ga |
+| L4 Load Balancing | TCP/UDP (tez) |
+| L7 Load Balancing | HTTP (aqlli) |
+| Mirroring | Traffic ni nusxalash |
+
+---
+
+## O'rganish tartibi
+
+```text
+Proxy
+-> Forward Proxy (VPN)
+-> Reverse Proxy (Nginx)
+-> Reverse Proxy Vazifalari
+-> SSL Termination
+-> Load Balancing
+-> Round Robin
+-> Least Connections
+-> IP Hashing
+-> Weighted
+-> L4 / L7
+-> Mirroring
+-> Redis
+-> Cache, Session, Rate Limiting
+-> Queue, Pub/Sub
+-> Zamonaviy Backend Arxitekturasi
+```
+
+---
+
+## How to use
+
+1. Proxy asoslaridan boshlang
+2. Reverse Proxy vazifalarini o'qing
+3. Load Balancing algoritmlarini tushuning
+4. Redis ni o'rganing
+5. Zamonaviy arxitekturani tahlil qiling

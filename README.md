@@ -102,6 +102,13 @@ A structured learning path for backend development fundamentals -- from Linux in
 - [Security Layers](11-security/security-layers.md) — Defense in depth
 - Practical Attack Lab (educational code)
 
+### 12 Backend Infrastructure
+- [Proxy asoslari](12-backend-infra/proxy.md) — Forward va Reverse Proxy
+- [Reverse Proxy Vazifalari](12-backend-infra/reverse-proxy-features.md) — Load Balancing, Caching, SSL Termination
+- [Redis](12-backend-infra/redis.md) — In-Memory Key-Value Database
+- [Load Balancing](12-backend-infra/load-balancing.md) — Round Robin, L4/L7, Mirroring
+- [Zamonaviy Arxitektura](12-backend-infra/modern-architecture.md) — DNS → TCP → TLS → HTTP → Proxy → LB → App → Redis → DB
+
 ---
 
 ## Learning Path
