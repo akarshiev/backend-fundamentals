@@ -108,6 +108,7 @@ A structured learning path for backend development fundamentals -- from Linux in
 - [Redis](12-backend-infra/redis.md) — In-Memory Key-Value Database
 - [Load Balancing](12-backend-infra/load-balancing.md) — Round Robin, L4/L7, Mirroring
 - [Rate Limiting & Throttling](12-backend-infra/rate-limiting.md) — Noisy Neighbor, Token Bucket, Leaky Bucket, Distributed Rate Limiting
+- [Circuit Breaker](12-backend-infra/circuit-breaker.md) — Cascading Failure, CLOSED/OPEN/HALF-OPEN, Fallback, Node.js
 - [Zamonaviy Arxitektura](12-backend-infra/modern-architecture.md) — DNS → TCP → TLS → HTTP → Proxy → LB → App → Redis → DB
 - [Circuit Breaker](12-backend-infra/circuit-breaker.md) — Cascading Failure, CLOSED/OPEN/HALF-OPEN, Fallback, Node.js
 
