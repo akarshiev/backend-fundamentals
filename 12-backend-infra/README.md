@@ -27,6 +27,8 @@ Proxy, Redis, Load Balancing va zamonaviy backend arxitekturasi.
 
 ### Amaliyot
 - [Go Reverse Proxy](examples/go-proxy/) -- Go tilida Reverse Proxy, Middleware, Rate Limiting amaliyot
+- [HTTP From Scratch](http-from-scratch.md) -- Go bilan HTTP ni 0 dan tushunish (TCP, Raw HTTP, Headers, Body, Methods)
+- [HTTP From Scratch Misollari](examples/http-from-scratch/) -- TCP connection, Raw HTTP, Headers parsing, Body streaming, Methods
 
 ---
 

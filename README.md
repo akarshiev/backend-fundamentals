@@ -111,6 +111,8 @@ A structured learning path for backend development fundamentals -- from Linux in
 - [Circuit Breaker](12-backend-infra/circuit-breaker.md) — Cascading Failure, CLOSED/OPEN/HALF-OPEN, Fallback, Node.js
 - [Zamonaviy Arxitektura](12-backend-infra/modern-architecture.md) — DNS → TCP → TLS → HTTP → Proxy → LB → App → Redis → DB
 - [Go Reverse Proxy Amaliyot](12-backend-infra/examples/go-proxy/) — Go tilida Reverse Proxy, Middleware, Rate Limiting
+- [HTTP From Scratch](12-backend-infra/http-from-scratch.md) — Go bilan HTTP ni 0 dan tushunish
+- [HTTP From Scratch Misollari](12-backend-infra/examples/http-from-scratch/) — TCP, Raw HTTP, Headers, Body, Methods Go misollari
 
 ---
 
